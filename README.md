@@ -6,13 +6,13 @@ Collection of patterns in Golang
 .
 ├── LICENSE
 ├── README.md
-├── behavioral\ patterns
+├── behavioral_patterns
 │   ├── iterator
 │   │   ├── Iterator_callback.go
 │   │   └── interator_interface.go
 │   └── observer
 │       └── observer.go
-├── creational\ patterns
+├── creational_patterns
 │   ├── builder
 │   │   └── builder.go
 │   ├── factory
@@ -20,9 +20,10 @@ Collection of patterns in Golang
 │   └── singleton
 │       ├── singleton_basic.go
 │       └── singleton_concurrent_safe.go
-└── structural\ patterns
+└── structural_patterns
     ├── adapter
     │   └── adapter.go
     └── facade
         └── facade.go
+
 ```
