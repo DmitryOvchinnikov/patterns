@@ -8,8 +8,8 @@ Collection of patterns in Golang
 ├── README.md
 ├── behavioral_patterns
 │   ├── iterator
-│   │   ├── Iterator_callback.go
-│   │   └── interator_interface.go
+│   │   ├── interator_interface.go
+│   │   └── iterator_callback.go
 │   └── observer
 │       └── observer.go
 ├── creational_patterns
