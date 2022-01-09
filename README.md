@@ -14,16 +14,28 @@ Collection of patterns in Golang
 │       └── observer.go
 ├── creational_patterns
 │   ├── builder
-│   │   └── builder.go
+│   │   ├── builder.go
+│   │   ├── example.go
+│   │   └── notification.go
 │   ├── factory
-│   │   └── factory.go
+│   │   ├── example.go
+│   │   ├── factory.go
+│   │   ├── magazine.go
+│   │   ├── newspaper.go
+│   │   └── publication.go
 │   └── singleton
-│       ├── singleton_basic.go
-│       └── singleton_concurrent_safe.go
+│       ├── example.go
+│       └── singleton.go
 └── structural_patterns
     ├── adapter
-    │   └── adapter.go
+    │   ├── example.go
+    │   ├── one.go
+    │   ├── oneAdapter.go
+    │   ├── television.go
+    │   └── two.go
     └── facade
-        └── facade.go
+        ├── coffeemachine.go
+        ├── example.go
+        └── menu.go
 
 ```
