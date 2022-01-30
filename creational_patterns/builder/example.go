@@ -3,19 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	var bldr = newNotificationBuilder()
+	var bldr = newBlueprintBuilder()
 
-	bldr.SetTitle("New Notification")
-	bldr.SetSubtitle("This is Subtitle")
-	bldr.SetIcon("icon.png")
-	bldr.SetImage("image.jpg")
-	bldr.SetPriority(4)
-	bldr.SetMessage("This is a basic Notification with some text in it")
-	bldr.SetType("alert")
+	bldr.SetPropertyOne("New Blueprint")
+	bldr.SetPropertyTwo("This is second property")
+	bldr.SetPropertyThree("This is third property")
 
 	notif, err := bldr.Build()
 	if err != nil {
-		fmt.Printf("Error creating the notification: %s", err)
+		fmt.Printf("Error creating the Blueprint: %s", err)
 	}
-	fmt.Printf("Notification: %+v", notif)
+	fmt.Printf("Blueprint: %+v", notif)
 }
