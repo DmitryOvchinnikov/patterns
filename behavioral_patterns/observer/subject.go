@@ -1,44 +1,44 @@
 package main
 
-// Define the interface for the observable type
-type observable interface {
-	registerObserver(obs observer)
-	unregisterObserver(obs observer)
+type Observable interface {
+	registerObserver(obs Observer)
+	unregisterObserver(obs Observer)
 	notifyAll()
 }
 
-// The DataSubject will have a list of listeners
-// and a field that gets changed, triggering them
-type DataSubject struct {
-	observers []DataListener
-	field     string
+// Subject have a list of listeners and
+// a data that gets changed, triggering them
+type Subject struct {
+	listeners []Listener
+	data      string
 }
 
-// ChangeItem will cause the Listeners to be called
-func (s *DataSubject) ChangeItem(data string) {
-	s.field = data
+// ChangeData will cause the Listeners to be called
+func (s *Subject) ChangeData(data string) {
+	s.data = data
+	s.notifyAll()
 }
 
 // registerObserver adds an observer to the list
-func (s *DataSubject) registerObserver(l DataListener) {
-	s.observers = append(s.observers, l)
+func (s *Subject) registerObserver(listener Listener) {
+	s.listeners = append(s.listeners, listener)
 }
 
 // unregisterObserver removes an observer from the list
-func (s *DataSubject) unregisterObserver(l DataListener) {
-	var newObs []DataListener
+func (s *Subject) unregisterObserver(listener Listener) {
+	var newListeners []Listener
 
-	for _, obs := range s.observers {
-		if l.Name != obs.Name {
-			newObs = append(newObs, obs)
+	for _, l := range s.listeners {
+		if listener.Name != l.Name {
+			newListeners = append(newListeners, l)
 		}
 	}
-	s.observers = newObs
+	s.listeners = newListeners
 }
 
 // notifyAll calls all the listeners with the changed data
-func (s *DataSubject) notifyAll() {
-	for _, obs := range s.observers {
-		obs.onUpdate(s.field)
+func (s *Subject) notifyAll() {
+	for _, l := range s.listeners {
+		l.onUpdate(s.data)
 	}
 }
