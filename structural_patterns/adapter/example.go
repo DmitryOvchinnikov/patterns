@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// Create instances of the two TV types with some default values.
+	// Create instances of the two TV types with some default valueo.
 	tv1 := &OneTV{
 		channel: 13,
 		volume:  35,

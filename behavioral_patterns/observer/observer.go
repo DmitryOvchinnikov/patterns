@@ -3,15 +3,14 @@ package main
 import "fmt"
 
 type Observer interface {
-	onUpdate(data string)
+	updated(data string)
 }
 
-// Listener observer will have a name.
-type Listener struct {
-	Name string
+type subscriber struct {
+	name string
 }
 
-// onUpdate to conform to the Observer interface
-func (l *Listener) onUpdate(data string) {
-	fmt.Println("Listener:", l.Name, "got data change:", data)
+// updated has called when subscriber got data change.
+func (s *subscriber) updated(data string) {
+	fmt.Println("Subscriber:", s.name, "got data change:", data)
 }

@@ -1,26 +1,26 @@
 package main
 
 func main() {
-	// Construct two Listener observers and give each one a name
-	listener1 := Listener{
-		"Listener1",
+
+	subscriber1 := subscriber{
+		"subscriber1",
 	}
-	listener2 := Listener{
-		"Listener2",
+	subscriber2 := subscriber{
+		"subscriber2",
 	}
 
-	// Create the Subject that the listeners will observe
-	subj := &Subject{}
-	// Register each listener with the Subject
-	subj.registerObserver(listener1)
-	subj.registerObserver(listener2)
+	// Create the Object that the subscribers will observe.
+	obj := &Object{}
+	// Register each Subscriber with the Object
+	obj.registerObserver(subscriber1)
+	obj.registerObserver(subscriber2)
 
-	// Change the data in the Subject -- this will cause
-	// the onUpdate method of each listener to be called
-	subj.ChangeData("Monday!")
-	subj.ChangeData("Sunday!")
+	// Change the data in the Object -- this will cause
+	// the Updated method of each Subscriber to be called
+	obj.changeTo("Monday!")
+	obj.changeTo("Sunday!")
 
 	// Try to unregister one of the observers
-	subj.unregisterObserver(listener2)
-	subj.ChangeData("Friday !")
+	obj.unregisterObserver(subscriber2)
+	obj.changeTo("Friday!")
 }
