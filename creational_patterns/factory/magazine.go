@@ -2,23 +2,22 @@ package main
 
 import "fmt"
 
-// Define a magazine struct and embed the publication interface.
+// magazine define the struct and embed the Publisher interface inside publication.
 type magazine struct {
 	publication
 }
 
-// String Define a Stringer interface that gives a string representation of the type
+// String gives a string representation of the type.
 func (m magazine) String() string {
 	return fmt.Sprintf("This is a magazine named %s", m.name)
 }
 
 // createMagazine returns a new Magazine object.
-func createMagazine(name string, pages int, publisher string) iPublication {
+func createMagazine(name string, pages int) Publisher {
 	return &magazine{
 		publication: publication{
-			name:      name,
-			pages:     pages,
-			publisher: publisher,
+			name:  name,
+			pages: pages,
 		},
 	}
 }
