@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-// MyLogger is the struct we want to make a singleton.
+// MyLogger is the struct we want to make a singleton1.
 type MyLogger struct {
 	logLevel int
 }

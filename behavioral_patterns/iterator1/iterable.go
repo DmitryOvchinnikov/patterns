@@ -1,12 +1,12 @@
 package main
 
 type IterableCollection interface {
-	createIterator() iterator
+	CreateIterator() iterator
 }
 
 type iterator interface {
-	hasNext() bool
-	next() *Book
+	HasNext() bool
+	Next() *Book
 }
 
 type BookIterator struct {
@@ -14,7 +14,7 @@ type BookIterator struct {
 	books   []Book
 }
 
-func (b *BookIterator) hasNext() bool {
+func (b *BookIterator) HasNext() bool {
 	if b.current >= len(b.books) {
 		return false
 	}
@@ -22,8 +22,8 @@ func (b *BookIterator) hasNext() bool {
 	return true
 }
 
-func (b *BookIterator) next() *Book {
-	if !b.hasNext() {
+func (b *BookIterator) Next() *Book {
+	if !b.HasNext() {
 		return nil
 	}
 	bk := b.books[b.current]

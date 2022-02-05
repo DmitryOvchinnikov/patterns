@@ -19,12 +19,12 @@ func (o *Object) changeTo(data string) {
 	o.notify()
 }
 
-// registerObserver adds an observer to the list.
+// registerObserver adds an observer1 to the list.
 func (o *Object) registerObserver(s subscriber) {
 	o.subscribers = append(o.subscribers, s)
 }
 
-// unregisterObserver removes an observer from the list.
+// unregisterObserver removes an observer1 from the list.
 func (o *Object) unregisterObserver(s subscriber) {
 	var newSubs []subscriber
 

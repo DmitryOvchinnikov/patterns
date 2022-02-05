@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type BookType int
 
@@ -33,8 +35,31 @@ func (l *Library) IterateBooks(f func(book Book) error) {
 	}
 }
 
-func (l *Library) createIterator() iterator {
+func (l *Library) CreateIterator() iterator {
 	return &BookIterator{
 		books: l.Collection,
 	}
+}
+
+var lib *Library = &Library{
+	[]Book{
+		{
+			Name:      "name1",
+			Author:    "writer1",
+			PageCount: 864,
+			Type:      HardCover,
+		},
+		{
+			Name:      "name2",
+			Author:    "writer2",
+			PageCount: 42,
+			Type:      SoftCover,
+		},
+		{
+			Name:      "name3",
+			Author:    "writer3",
+			PageCount: 66,
+			Type:      EBook,
+		},
+	},
 }
